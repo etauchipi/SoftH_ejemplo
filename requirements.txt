@@ -3,6 +3,8 @@ uvicorn[standard]
 python-multipart
 openai-whisper
 gTTS
+PIL
+uuid
 langchain
 langchain-community
 # langchain-google-genai integra LangChain con los modelos de Gemini
@@ -12,6 +14,18 @@ sentence-transformers
 pytesseract # Lo Respaldo o para texto simple
 Pillow
 pypdf
+typing
+shutil
 # python-dotenv para manejar la clave de API de forma segura
 python-dotenv
 python-multipart aiofiles
+
+# El modelo LLM usado en este caso es Phi3
+# Para instalar, debe instalarse primero ollama, y una vez está instalado:
+# Ejecutar el comando: ollama pull phi3
+# Ollama, por defecto, se ejecuta en http://localhost:11434
+
+# Debe tenerse la librería ffmpeg instalada
+# https://www.gyan.dev/ffmpeg/
+# Ya sea descargada desde el sitio del fabricante o utilizando Chocolatey
+# ffmpeg es utilizado por Whisper, pero no se instala con Whisper directamente
