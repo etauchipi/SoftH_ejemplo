@@ -18,7 +18,7 @@ STATIC_DIR = BASE_DIR / "app" / "static"
 AUDIO_RESPONSES_DIR = STATIC_DIR / "audio_responses"
 
 # --- Configuración de la App ---
-app = FastAPI(title="Etau Inc. Intelligent Support API")
+app = FastAPI(title="Etau Inc. Intelligent Support API for FastHelp Inc.")
 
 # --- Middleware de CORS ---
 origins = ["*"]
@@ -55,7 +55,7 @@ async def process_request(query: str, request: Request, image_path: Optional[str
 
 @app.post("/support", summary="Soporte por Texto e Imagen")
 async def handle_text_support(request: Request, text_query: str = Form(...), image: Optional[UploadFile] = File(None)):
-    """Este endpoint ahora también guarda el archivo de imagen inmediatamente."""
+    """Este endpoint guarda el archivo de imagen inmediatamente para su proceso."""
     temp_image_path = None
     try:
         if image and image.filename:
@@ -76,7 +76,7 @@ async def handle_text_support(request: Request, text_query: str = Form(...), ima
 
 @app.post("/support/audio", summary="Soporte por Audio e Imagen")
 async def handle_audio_support(request: Request, audio: UploadFile = File(...), image: Optional[UploadFile] = File(None)):
-    """Este endpoint ahora guarda AMBOS archivos inmediatamente."""
+    """Este endpoint guarda los archivos de imagen y audio inmediatamente."""
     
     temp_audio_path = None
     temp_image_path = None
@@ -113,4 +113,4 @@ async def handle_audio_support(request: Request, audio: UploadFile = File(...), 
 
 @app.get("/", summary="Endpoint de Bienvenida")
 def read_root():
-    return {"message": "Bienvenido a la API de Soporte Inteligente de Etau Inc."}
+    return {"message": "Bienvenido a la API de Soporte Inteligente de Etau Inc. para SoftHelp Inc."}

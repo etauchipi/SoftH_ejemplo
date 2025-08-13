@@ -91,7 +91,7 @@ def generate_intelligent_answer(query: str, image_path: str = None) -> str:
     """
     image_context = ""
     if image_path:
-        # Usamos nuestra nueva función para obtener la descripción de la imagen
+        # Usamos esta función para obtener la descripción de la imagen
         image_context = describe_image_with_llava(image_path)
 
     # 1. Obtener contexto relevante de la base de conocimiento (RAG)
@@ -100,7 +100,7 @@ def generate_intelligent_answer(query: str, image_path: str = None) -> str:
         relevant_docs = retriever.get_relevant_documents(query)
         rag_context = "\n\n".join([doc.page_content for doc in relevant_docs])
 
-    # 2. Construir el prompt final para Llama 3
+    # 2. Construir el prompt aumentado con el contexto final para Phi3
     prompt = f"""
     Eres un asistente de soporte técnico experto para Etau Inc.
     
@@ -122,7 +122,7 @@ def generate_intelligent_answer(query: str, image_path: str = None) -> str:
     print(prompt)
     print("="*50)
     
-    # 3. Invocar a Llama 3 para la respuesta final
+    # 3. Invocar a Phi3 para la respuesta final
     response = llm_text.invoke(prompt)
     return response.content
 
