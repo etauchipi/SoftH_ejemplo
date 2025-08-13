@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+python-multipart
+openai-whisper
+gTTS
+langchain
+langchain-community
+# langchain-google-genai integra LangChain con los modelos de Gemini
+langchain-google-genai 
+chromadb
+sentence-transformers
+pytesseract # Lo Respaldo o para texto simple
+Pillow
+pypdf
+# python-dotenv para manejar la clave de API de forma segura
+python-dotenv
+python-multipart aiofiles
