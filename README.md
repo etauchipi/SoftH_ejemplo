@@ -102,6 +102,10 @@ Asegúrate de tener instalado lo siguiente en tu sistema:
     ```
     La API estará disponible en `http://localhost:8000`.
 
+    ### FINALMENTE:
+    ### DEBE CREAR UN DIRECTORIO /temp_files EN LA RAÍZ DEL PROYECTO, SI NO SE CREA AUTOMÁTICAMENTE
+    ### Y VERIFICAR EL REQUERIMIENTO DEL ARCHIVO INFO.TXT DENTRO DEL SUBDIRECTORIO /app
+
 ---
 
 ## 📚 Documentación de la API
@@ -124,3 +128,6 @@ Una vez que el servidor esté en marcha, puedes acceder a la documentación inte
 curl -X POST "http://localhost:8000/support/audio" \
 -F "audio=@/ruta/a/tu/pregunta.mp3" \
 -F "image=@/ruta/a/tu/captura.png"
+
+
+
