@@ -1,0 +1,7 @@
+Si al iniciar la aplicación no se crea en este directorio (app) la siguiente estructura, por favor crearla:
+
+
+/static
+ -- /audio_responses
+ -- /support_audio
+ -- /temp_files
